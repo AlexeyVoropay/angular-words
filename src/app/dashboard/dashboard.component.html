@@ -1,0 +1,11 @@
+<h3>Популярные языки</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let language of languages" class="col-1-4"
+	routerLink="/detail/{{language.id}}">
+    <div class="module language">
+      <h4>{{language.name}}</h4>
+    </div>
+  </a>  
+</div>
+
+<app-language-search></app-language-search>

@@ -1,0 +1,28 @@
+<h2>Языки</h2>
+
+<div>
+  <div>
+    <label>Наименование:
+      <input #languageName />
+    </label>
+  </div>
+  <div>
+    <label>Описание:
+      <input #languageDescription />
+    </label>
+  </div>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(languageName.value, languageDescription.value); languageName.value=''; languageDescription.value=''">
+    Добавить
+  </button>
+</div>
+
+<ul class="languages">
+  <li *ngFor="let language of languages">
+    <a routerLink="/languages/{{language.id}}">
+      <span class="badge">{{language.id}}</span> {{language.name}}
+    </a>
+    <button class="delete" title="delete language"
+        (click)="delete(language)">x</button>
+  </li>
+</ul>

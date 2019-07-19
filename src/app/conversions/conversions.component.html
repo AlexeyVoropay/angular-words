@@ -1,0 +1,21 @@
+<h2>Языки</h2>
+
+<div>
+  <label>Наименование языка:
+    <input #conversionName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(conversionName.value); conversionName.value=''">
+    Добавить
+  </button>
+</div>
+
+<ul class="conversions">
+  <li *ngFor="let conversion of conversions">
+    <a routerLink="/detail/{{conversion.id}}">
+      <span class="badge">{{conversion.id}}</span> {{conversion.name}}
+    </a>
+    <button class="delete" title="delete conversion"
+        (click)="delete(conversion)">x</button>
+  </li>
+</ul>
