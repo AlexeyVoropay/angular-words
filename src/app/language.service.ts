@@ -14,7 +14,7 @@ const httpOptions = {
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
 
-  private languagesUrl = 'http://localhost:50473/api/languages';  // URL to web api
+  private languagesUrl = 'http://www.alexey.somee.com/api/languages';  // URL to web api
 
   constructor(
     private http: HttpClient,
